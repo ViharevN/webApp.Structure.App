@@ -12,24 +12,18 @@ import org.springframework.web.bind.annotation.RestController;
 public class RecipeController {
     private RecipeService recipeService;
 
-    @GetMapping("/hello")
+    @GetMapping("/")
     public String hello() {
-        return "App run";
+        return "Recipe page";
     }
 
-    @GetMapping("/add")
-    public void addRecipe(@RequestParam Integer id,
-                          @RequestParam Recipe recipe) {
-        recipeService.addRecipe(id, recipe);
+    @GetMapping("/addRecipe")
+    public void addRecipe(@RequestParam Recipe recipe) {
+        this.recipeService.addRecipe(recipe);
     }
 
-    @GetMapping("/all")
-    public void getRecipes() {
-        recipeService.getRecipe();
-    }
-
-    @GetMapping("/bye")
-    public String printBye() {
-        return "Good Bye";
+    @GetMapping("/getRecipe")
+    public void getRecipeById(@RequestParam Long id) {
+        this.recipeService.getRecipe(id);
     }
 }
