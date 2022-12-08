@@ -11,10 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/recipe")
 public class RecipeController {
     private RecipeService recipeService;
+
     @GetMapping("/hello")
     public String hello() {
         return "App run";
     }
+
     @GetMapping("/add")
     public void addRecipe(@RequestParam Integer id,
                           @RequestParam Recipe recipe) {
@@ -24,5 +26,10 @@ public class RecipeController {
     @GetMapping("/all")
     public void getRecipes() {
         recipeService.getRecipe();
+    }
+
+    @GetMapping("/bye")
+    public String printBye() {
+        return "Good Bye";
     }
 }
