@@ -3,10 +3,10 @@ package me.viharev.wepapp.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-@AllArgsConstructor
 @Data
+@AllArgsConstructor
 public class Ingredient {
-    private String nameIngredient;
-    private int timeOfPreparing;
+    private String name;
+    private int count;
     private String unit;
 }
